@@ -1,438 +1,98 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>You're Invited — Freshers Party</title>
-<style>
-  :root{
-    --maroon-deep:#3b0410;
-    --maroon:#5e0a1c;
-    --maroon-light:#8c1330;
-    --gold:#c9a44c;
-    --gold-soft:#e4cf8f;
-    --cream:#f7ede1;
-    --ink:#241012;
+{
+  "asnikar": {
+    "name": "Asnikar Aadya Omkar",
+    "flyer": "flyers/asnikar.png"
+  },
+  "rajendra": {
+    "name": "Rajendra Namdeo Motinge",
+    "flyer": "flyers/rajendra.png"
+  },
+  "pravin": {
+    "name": "Pravin Malode",
+    "flyer": "flyers/pravin.png"
+  },
+  "more": {
+    "name": "More Manisha Vitthalrao",
+    "flyer": "flyers/more.png"
+  },
+  "sachin": {
+    "name": "Sachin Namdev Gayke",
+    "flyer": "flyers/sachin.png"
+  },
+  "pallavi": {
+    "name": "Pallavi Subhashrao Dakhore",
+    "flyer": "flyers/pallavi.png"
+  },
+  "deepali": {
+    "name": "Deepali Prashant Kawthekar",
+    "flyer": "flyers/deepali.png"
+  },
+  "pooja": {
+    "name": "Pooja Rupesh Gandhi",
+    "flyer": "flyers/pooja.png"
+  },
+  "abhijeet": {
+    "name": "Abhijeet Dhanraj Ghodke",
+    "flyer": "flyers/abhijeet.png"
+  },
+  "kalyani": {
+    "name": "Kalyani Kishor Shevatekar",
+    "flyer": "flyers/kalyani.png"
+  },
+  "raja": {
+    "name": "Raja Babasaheb Bhujbal",
+    "flyer": "flyers/raja.png"
+  },
+  "shekhar": {
+    "name": "Shekhar Somesh Kothule",
+    "flyer": "flyers/shekhar.png"
+  },
+  "nirmitee": {
+    "name": "Nirmitee Vinod Jojare",
+    "flyer": "flyers/nirmitee.png"
+  },
+  "vikas": {
+    "name": "Vikas Shardaprasad Mishra",
+    "flyer": "flyers/vikas.png"
+  },
+  "pratik": {
+    "name": "Pratik Sunil Jaiswal",
+    "flyer": "flyers/pratik.png"
+  },
+  "ganesh-varde": {
+    "name": "Ganesh Trimbak Varde",
+    "flyer": "flyers/ganesh-varde.png"
+  },
+  "sunil": {
+    "name": "Sunil Baban Bodkhe",
+    "flyer": "flyers/sunil.png"
+  },
+  "ganesh-tambe": {
+    "name": "Ganesh Narayanrao Tambe",
+    "flyer": "flyers/ganesh-tambe.png"
+  },
+  "priya": {
+    "name": "Priya Bhanudas Shinde",
+    "flyer": "flyers/priya.png"
+  },
+  "shweta": {
+    "name": "Shweta Pandurang Jadhav",
+    "flyer": "flyers/shweta.png"
+  },
+  "pritee": {
+    "name": "Pritee Ravindra Jadhav",
+    "flyer": "flyers/pritee.png"
+  },
+  "shaikh": {
+    "name": "Shaikh Tabassum Mohmaad Hanif",
+    "flyer": "flyers/shaikh.png"
+  },
+  "tofik": {
+    "name": "Tofik Samir Beg",
+    "flyer": "flyers/tofik.png"
+  },
+  "abhishek": {
+    "name": "Abhishek Sunil Jadhav",
+    "flyer": "flyers/abhishek.png"
   }
-
-  *{box-sizing:border-box;}
-
-  html,body{
-    margin:0;
-    padding:0;
-    height:100%;
-    background:var(--ink);
-    font-family:'Iowan Old Style','Palatino Linotype',Georgia,serif;
-    overflow:hidden;
-  }
-
-  .stage{
-    position:relative;
-    width:100vw;
-    height:100vh;
-    height:100dvh;
-    overflow:hidden;
-    background:radial-gradient(ellipse at center, #1a0509 0%, #0c0304 75%);
-    perspective:1800px;
-  }
-
-  /* ---------- Backdrop reveal content ---------- */
-  .reveal{
-    position:absolute;
-    inset:0;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:flex-start;
-    padding:6vh 5vw 4vh;
-    overflow-y:auto;
-    -webkit-overflow-scrolling:touch;
-  }
-
-  .reveal-inner{
-    width:100%;
-    max-width:520px;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    text-align:center;
-  }
-
-  .kicker{
-    color:var(--gold-soft);
-    font-size:0.8rem;
-    letter-spacing:0.18em;
-    margin:0 0 0.6rem;
-    font-style:italic;
-    opacity:0;
-    animation:fadeUp 0.9s ease forwards;
-    animation-delay:0.5s;
-  }
-
-  .flyer-wrap{
-    width:100%;
-    border-radius:4px;
-    overflow:hidden;
-    box-shadow:0 20px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(201,164,76,0.25);
-    opacity:0;
-    transform:translateY(24px) scale(0.98);
-    animation:fadeUp 1s ease forwards;
-    animation-delay:0.25s;
-    background:#111;
-  }
-
-  .flyer-wrap img{
-    display:block;
-    width:100%;
-    height:auto;
-  }
-
-  .flyer-placeholder{
-    width:100%;
-    aspect-ratio:3/4;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    gap:0.6rem;
-    background:
-      linear-gradient(135deg, #2a0a13 0%, #4a0e1f 50%, #2a0a13 100%);
-    color:var(--gold-soft);
-    padding:2rem;
-  }
-
-  .flyer-placeholder svg{width:44px;height:44px;opacity:0.7;}
-  .flyer-placeholder .ph-title{
-    font-size:1.4rem;
-    letter-spacing:0.02em;
-  }
-  .flyer-placeholder .ph-sub{
-    font-size:0.8rem;
-    opacity:0.75;
-    font-style:italic;
-    max-width:260px;
-    line-height:1.5;
-  }
-
-  .details{
-    margin-top:1.8rem;
-    color:var(--cream);
-    opacity:0;
-    animation:fadeUp 0.9s ease forwards;
-    animation-delay:0.75s;
-  }
-
-  .details h1{
-    font-size:1.5rem;
-    font-weight:400;
-    letter-spacing:0.02em;
-    margin:0 0 0.9rem;
-    color:var(--gold-soft);
-  }
-
-  .detail-row{
-    display:flex;
-    align-items:baseline;
-    justify-content:center;
-    gap:0.6rem;
-    font-size:1rem;
-    margin:0.3rem 0;
-    color:var(--cream);
-  }
-
-  .detail-row .label{
-    font-size:0.7rem;
-    letter-spacing:0.1em;
-    color:var(--gold);
-    min-width:52px;
-    text-align:right;
-    font-style:italic;
-  }
-
-  .divider{
-    width:60px;
-    height:1px;
-    background:linear-gradient(90deg, transparent, var(--gold), transparent);
-    margin:1.1rem auto;
-  }
-
-  .rsvp-note{
-    font-size:0.82rem;
-    color:rgba(247,237,225,0.65);
-    font-style:italic;
-    margin-top:0.4rem;
-  }
-
-  @keyframes fadeUp{
-    to{opacity:1;transform:translateY(0) scale(1);}
-  }
-  .kicker{transform:translateY(10px);}
-
-  /* ---------- Curtains ---------- */
-  .curtains{
-    position:absolute;
-    inset:0;
-    z-index:10;
-    pointer-events:none;
-    transform-style:preserve-3d;
-  }
-
-  .curtain{
-    position:absolute;
-    top:0;
-    bottom:0;
-    width:52%;
-    background:
-      repeating-linear-gradient(
-        90deg,
-        var(--maroon-light) 0px,
-        var(--maroon) 18px,
-        var(--maroon-deep) 36px,
-        var(--maroon) 54px,
-        var(--maroon-light) 72px
-      );
-    box-shadow: inset 0 0 80px rgba(0,0,0,0.55);
-    pointer-events:auto;
-    backface-visibility:hidden;
-  }
-
-  .curtain::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:
-      radial-gradient(ellipse at top, rgba(255,255,255,0.10), transparent 55%),
-      linear-gradient(180deg, rgba(0,0,0,0.35), transparent 12%, transparent 88%, rgba(0,0,0,0.45));
-    mix-blend-mode:overlay;
-  }
-
-  .curtain.left{
-    left:0;
-    transform-origin:left center;
-    border-right:2px solid rgba(201,164,76,0.5);
-  }
-  .curtain.right{
-    right:0;
-    transform-origin:right center;
-    border-left:2px solid rgba(201,164,76,0.5);
-  }
-
-  /* fold-crease shadow that sweeps across each panel as it hinges open,
-     mimicking the PowerPoint "Curtains" transition */
-  .curtain .fold{
-    position:absolute;
-    top:0;
-    bottom:0;
-    width:36%;
-    pointer-events:none;
-    opacity:0;
-  }
-  .curtain.left .fold{
-    right:0;
-    background:linear-gradient(90deg, transparent, rgba(0,0,0,0.55) 78%, rgba(0,0,0,0.7));
-  }
-  .curtain.right .fold{
-    left:0;
-    background:linear-gradient(270deg, transparent, rgba(0,0,0,0.55) 78%, rgba(0,0,0,0.7));
-  }
-
-  /* swag / valance top trim */
-  .curtain .trim{
-    position:absolute;
-    top:0;left:0;right:0;
-    height:34px;
-    background:
-      radial-gradient(circle at 10px 0, transparent 12px, var(--gold) 13px, var(--gold) 15px, transparent 16px) repeat-x;
-    background-size:36px 34px;
-    opacity:0.85;
-  }
-
-  .curtains.open .curtain.left{
-    animation: sweepLeft 2.6s linear forwards;
-  }
-  .curtains.open .curtain.right{
-    animation: sweepRight 2.6s linear forwards;
-  }
-  .curtains.open .curtain.left .fold,
-  .curtains.open .curtain.right .fold{
-    display:none;
-  }
-
-  /* Continuous glide, single easing curve start-to-finish so there's
-     no mid-way pause — just one smooth acceleration outward. */
-  @keyframes sweepLeft{
-    0%{   transform:translateX(0)     scaleX(1); }
-    100%{ transform:translateX(-108%) scaleX(0.9); }
-  }
-  @keyframes sweepRight{
-    0%{   transform:translateX(0)    scaleX(1); }
-    100%{ transform:translateX(108%) scaleX(0.9); }
-  }
-
-  /* ---------- Center CTA ---------- */
-  .cta-layer{
-    position:absolute;
-    inset:0;
-    z-index:20;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:0 6vw;
-    transition:opacity 1.2s ease, visibility 1.2s;
-  }
-
-  .cta-layer.hidden{
-    opacity:0;
-    visibility:hidden;
-  }
-
-  .cta-title{
-    font-size:clamp(2.1rem, 8vw, 3.4rem);
-    font-style:normal;
-    color:var(--gold);
-    letter-spacing:0.06em;
-    margin:0 0 2rem;
-    line-height:1.25;
-    text-shadow:
-      0 0 18px rgba(201,164,76,0.55),
-      0 4px 28px rgba(0,0,0,0.7);
-  }
-
-  .open-btn{
-    font-family:inherit;
-    font-size:1rem;
-    letter-spacing:0.08em;
-    color:var(--maroon-deep);
-    background:linear-gradient(135deg, var(--gold-soft), var(--gold));
-    border:none;
-    padding:0.95rem 2.4rem;
-    border-radius:2px;
-    cursor:pointer;
-    box-shadow:0 10px 30px rgba(0,0,0,0.4);
-    transition:transform 0.25s ease, box-shadow 0.25s ease;
-  }
-
-  .open-btn:hover{
-    transform:translateY(-2px);
-    box-shadow:0 14px 34px rgba(0,0,0,0.5);
-  }
-  .open-btn:active{
-    transform:translateY(0);
-  }
-
-  .open-btn:focus-visible{
-    outline:2px solid var(--gold-soft);
-    outline-offset:3px;
-  }
-
-  @media (prefers-reduced-motion: reduce){
-    .curtain, .cta-layer, .flyer-wrap, .details, .kicker{
-      transition-duration:0.2s !important;
-      animation-duration:0.2s !important;
-    }
-  }
-</style>
-</head>
-<body>
-
-<div class="stage">
-
-  <!-- Content revealed behind the curtains -->
-  <div class="reveal">
-    <div class="reveal-inner">
-      <p class="kicker">you are cordially invited to</p>
-
-      <div class="flyer-wrap" id="flyerWrap">
-        <div class="flyer-placeholder" id="flyerPlaceholder">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
-            <rect x="3" y="3" width="18" height="18" rx="1"></rect>
-            <circle cx="8.5" cy="8.5" r="1.5"></circle>
-            <path d="M21 15l-5-5L5 21"></path>
-          </svg>
-          <div class="ph-title">Invitation flyer coming soon</div>
-          <div class="ph-sub">This space will hold the event flyer — replace flyer.jpg with the final artwork.</div>
-        </div>
-      </div>
-
-      <div class="details">
-        <h1 id="teacherHeading">Freshers Party</h1>
-        <div class="detail-row"><span class="label">Date</span><span>12th September</span></div>
-        <div class="detail-row"><span class="label">Time</span><span>11:00 AM</span></div>
-        <div class="detail-row"><span class="label">Venue</span><span>Rabindranath Tagore Hall</span></div>
-        <div class="divider"></div>
-        <p class="rsvp-note">We look forward to welcoming you.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Curtains -->
-  <div class="curtains" id="curtains">
-    <div class="curtain left"><div class="trim"></div><div class="fold"></div></div>
-    <div class="curtain right"><div class="trim"></div><div class="fold"></div></div>
-  </div>
-
-  <!-- CTA button layer -->
-  <div class="cta-layer" id="ctaLayer">
-    <h1 class="cta-title">An invitation awaits</h1>
-    <button class="open-btn" id="openBtn">Open Invitation</button>
-  </div>
-
-</div>
-
-<script>
-  const openBtn = document.getElementById('openBtn');
-  const curtains = document.getElementById('curtains');
-  const ctaLayer = document.getElementById('ctaLayer');
-  const flyerWrap = document.getElementById('flyerWrap');
-  const teacherHeading = document.getElementById('teacherHeading');
-
-  openBtn.addEventListener('click', () => {
-    curtains.classList.add('open');
-    ctaLayer.classList.add('hidden');
-    openBtn.disabled = true;
-  });
-
-  // Load the right flyer + name based on ?t=<id> in the URL
-  (async function loadTeacherFlyer(){
-    const params = new URLSearchParams(window.location.search);
-    const id = params.get('t');
-    if(!id) return; // no id given, keep the placeholder
-
-    try{
-      const res = await fetch('teachers.json');
-      if(!res.ok) throw new Error('manifest not found');
-      const teachers = await res.json();
-      const entry = teachers[id];
-
-      if(!entry){
-        flyerWrap.innerHTML =
-          '<div class="flyer-placeholder"><div class="ph-title">Invitation not found</div>' +
-          '<div class="ph-sub">We couldn\'t find an invitation for this link. Please check the QR code with the organizers.</div></div>';
-        return;
-      }
-
-      const img = new Image();
-      img.alt = entry.name + ' — Freshers Party invitation flyer';
-      img.src = entry.flyer;
-      img.onload = () => {
-        flyerWrap.innerHTML = '';
-        flyerWrap.appendChild(img);
-      };
-      img.onerror = () => {
-        flyerWrap.innerHTML =
-          '<div class="flyer-placeholder"><div class="ph-title">Flyer image missing</div>' +
-          '<div class="ph-sub">' + entry.flyer + ' could not be loaded.</div></div>';
-      };
-
-      teacherHeading.textContent = entry.name;
-    }catch(err){
-      // teachers.json missing or unreachable — silently keep placeholder
-      console.warn('Could not load teacher manifest:', err);
-    }
-  })();
-</script>
-
-</body>
-</html>
+}
