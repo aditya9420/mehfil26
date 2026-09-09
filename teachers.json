@@ -21,7 +21,7 @@
   "shweta":       { "name": "Shweta Jadhav Mam",          "flyer": "flyers/shweta.png" },
   "pritee":       { "name": "Pritee Ravindra Jadhav",            "flyer": "flyers/pritee.png" },
   "shaikh":       { "name": "Shaikh Tabassum Mohmaad Hanif",    "flyer": "flyers/shaikh.png" },
-  "taufik":        { "name": "Tofik Samir Beg",                   "flyer": "flyers/tofik.png" },
+  "tofik":        { "name": "Tofik Samir Beg",                   "flyer": "flyers/tofik.png" },
   "abhishek":     { "name": "Abhishek Sunil Jadhav",             "flyer": "flyers/abhishek.png" },
   "sabiha-mam":     { "name": "Dr.sabiha mam",             "flyer": "flyers/sabiha-mam.png" },
   "gaikwad-sir":     { "name": "Dr.Rameshwar Gaikwad sir",             "flyer": "flyers/gaikwad-sir.png" }
