@@ -9,7 +9,7 @@
   "pooja":        { "name": "Pooja Gandhi Mam",               "flyer": "flyers/pooja.png" },
   "abhijeet":     { "name": "Abhijeet Sir",          "flyer": "flyers/abhijeet.png" },
   "kalyani":      { "name": "Kalyani Mam",        "flyer": "flyers/kalyani.png" },
-  "raja":         { "name": "Raja Babasaheb Bhujbal",            "flyer": "flyers/raja.png" },
+  "rajesh":         { "name": "Raja Babasaheb Bhujbal",            "flyer": "flyers/rajesh.png" },
   "shekhar":      { "name": "Shekhar Somesh Kothule",           "flyer": "flyers/shekhar.png" },
   "nirmitee":     { "name": "Nirmitee Mam",             "flyer": "flyers/nirmitee.png" },
   "vikas":        { "name": "Vikas Mishra sir",        "flyer": "flyers/vikas.png" },
@@ -22,5 +22,7 @@
   "pritee":       { "name": "Pritee Ravindra Jadhav",            "flyer": "flyers/pritee.png" },
   "shaikh":       { "name": "Shaikh Tabassum Mohmaad Hanif",    "flyer": "flyers/shaikh.png" },
   "tofik":        { "name": "Tofik Samir Beg",                   "flyer": "flyers/tofik.png" },
-  "abhishek":     { "name": "Abhishek Sunil Jadhav",             "flyer": "flyers/abhishek.png" }
+  "abhishek":     { "name": "Abhishek Sunil Jadhav",             "flyer": "flyers/abhishek.png" },
+  "sabiha-mam":     { "name": "Dr.sabiha mam",             "flyer": "flyers/sabiha-mam.png" },
+  "gaikwad-sir":     { "name": "Dr.Rameshwar Gaikwad sir",             "flyer": "flyers/gaikwad-sir.png" }
 }
