@@ -23,6 +23,6 @@
   "shaikh":       { "name": "Shaikh Tabassum Mohmaad Hanif",    "flyer": "flyers/shaikh.png" },
   "taufik":       { "name": "Taufik Beg Sir",                   "flyer": "flyers/taufik.png" },
   "abhishek":     { "name": "Abhishek Sunil Jadhav",            "flyer": "flyers/abhishek.png" },
-  "sabiha-mam":   { "name": "Dr. Sabiha Mam",                   "flyer": "flyers/sabiha-mam.png" },
-  "gaikwad-sir":  { "name": "Dr. Rameshwar Gaikwad Sir",        "flyer": "flyers/gaikwad-sir.png" }
+  "sabiha":   { "name": "Dr. Sabiha Mam",                   "flyer": "flyers/sabiha-mam.png" },
+  "rameshwar":  { "name": "Dr. Rameshwar Gaikwad Sir",        "flyer": "flyers/gaikwad-sir.png" }
 }
